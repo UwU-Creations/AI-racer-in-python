@@ -26,5 +26,5 @@ class Car(object):
     def reset(self):
 
         self.y = random.randint(self.width, GAME_WIDTH) * -1
-        self.x = random.randint(1, 3) * BLOCK_SIZE + self.width // 2
+        self.x = random.randint(1, 3) * BLOCK_SIZE
         self.score += 1

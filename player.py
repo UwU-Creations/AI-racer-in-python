@@ -5,7 +5,7 @@ from constants import *
 class Player():
     def __init__(self):
         self.width = BLOCK_SIZE
-        self.x = GAME_WIDTH // 2
+        self.x = 2 * BLOCK_SIZE
 
 
     def update(self):
