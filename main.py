@@ -51,6 +51,9 @@ def draw():
     player.draw(surface)
     for car in cars:
         car.draw(surface)
+
+
+    draw_grid(surface)
     pygame.display.flip()
 
 
@@ -59,6 +62,23 @@ def update():
     player.update()
     for car in cars:
         car.update()
+
+
+
+
+
+# ONLY CHANGE THIS CODE
+def draw_grid(surface):
+    #  surface, (color), (start_pos), (end_pos), line_width
+    pygame.draw.line(surface, (255, 255, 255), (0, 0), (GAME_WIDTH, GAME_HEIGHT), 5)
+
+
+
+
+
+
+
+####################################### 
 
 if __name__ == "__main__":
     main()
