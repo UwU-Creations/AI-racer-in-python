@@ -10,7 +10,7 @@ class Car(object):
         self.width = BLOCK_SIZE
         self.speed = 5
         self.score = 0
-
+        self.reset()
 
     def update(self):
         self.y += self.speed
@@ -26,5 +26,5 @@ class Car(object):
     def reset(self):
 
         self.y = random.randint(self.width, GAME_WIDTH) * -1
-        self.x = random.randint(0, GAME_WIDTH)
+        self.x = random.randint(1, 3) * BLOCK_SIZE + self.width // 2
         self.score += 1
