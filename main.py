@@ -48,9 +48,9 @@ def main():
 def draw():
     surface.fill((0, 0, 0))#background
 
-    player.draw(surface)
-    for car in cars:
-        car.draw(surface)
+    # player.draw(surface)
+    # for car in cars:
+    #     car.draw(surface)
 
 
     draw_grid(surface)
@@ -71,22 +71,24 @@ def update():
 def draw_grid(surface):
     #  surface, (color), (start_pos), (end_pos), line_width
     #pygame.draw.line(surface, (255, 255, 255), (0, 0), (GAME_WIDTH, GAME_HEIGHT), 5)
-    for x in range(6):
-        Vertical_line = x * (GAME_WIDTH // 5)
-        pygame.draw.line(surface, (255, 255, 255), (Vertical_line, 0), (Vertical_line, GAME_HEIGHT), 5)
-        
-
-    for y in range(10):
-        Horizontal_line = y * (GAME_HEIGHT// 10)
-        pygame.draw.line(surface, (255, 255, 255), (0, Horizontal_line), (GAME_WIDTH, Horizontal_line), 5)
+    for x in range(COLS + 1):
+        vertical_line = x * (BLOCK_SIZE)
+        pygame.draw.line(surface, (255, 255, 255), (vertical_line, 0), (vertical_line, GAME_HEIGHT), 5)
 
 
+    for y in range(ROWS):
+        horizontal_line = y * (BLOCK_SIZE)
+        pygame.draw.line(surface, (255, 255, 255), (0, horizontal_line), (GAME_WIDTH, horizontal_line), 5)
+
+        # surface, (color), rect(x, y, width, height), ?Line widith no fill
+    pygame.draw.rect(surface, (255, 255, 255), (0, 0, GAME_WIDTH, GAME_HEIGHT), 5)
+    pygame.draw.rect(surface, (255, 0, 255), (0, 0, BLOCK_SIZE, BLOCK_SIZE))
 
 
 
 
 
-####################################### 
+#######################################
 
 if __name__ == "__main__":
     main()
