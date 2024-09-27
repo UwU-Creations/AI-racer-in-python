@@ -70,7 +70,15 @@ def update():
 # ONLY CHANGE THIS CODE
 def draw_grid(surface):
     #  surface, (color), (start_pos), (end_pos), line_width
-    pygame.draw.line(surface, (255, 255, 255), (0, 0), (GAME_WIDTH, GAME_HEIGHT), 5)
+    #pygame.draw.line(surface, (255, 255, 255), (0, 0), (GAME_WIDTH, GAME_HEIGHT), 5)
+    for x in range(6):
+        Vertical_line = x * (GAME_WIDTH // 5)
+        pygame.draw.line(surface, (255, 255, 255), (Vertical_line, 0), (Vertical_line, GAME_HEIGHT), 5)
+        
+
+    for y in range(10):
+        Horizontal_line = y * (GAME_HEIGHT// 10)
+        pygame.draw.line(surface, (255, 255, 255), (0, Horizontal_line), (GAME_WIDTH, Horizontal_line), 5)
 
 
 
